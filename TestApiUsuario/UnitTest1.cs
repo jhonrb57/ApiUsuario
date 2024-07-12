@@ -1,0 +1,31 @@
+using ApiUsuario;
+namespace TestApiUsuario
+{
+    [TestClass]
+    public class UnitTest1
+    {
+        [TestMethod]
+        public void TestGet()
+        {
+            var api = new ApiUsuario.Controllers.UsuarioController();
+            string id = "789";
+            string resultado = api.Get(id);
+            Assert.AreEqual("No hay registros con el número de cédula " + id, resultado);
+        }
+
+        [TestMethod]
+        public void TestPost()
+        {
+            var api = new ApiUsuario.Controllers.UsuarioController();
+            var model = new ApiUsuario.Models.Usuario();
+            model.Id = "123";
+            model.Nombre = "Lina";
+            model.Cedula = 1025549402;
+            model.Telefono = "6017179025";
+            model.Direccion = "Carrera 24 # 38 - 45";
+            model.Email = "";
+            string resultado = api.Post(model);
+            Assert.AreEqual("Inserción correcta", resultado);
+        }
+    }
+}
