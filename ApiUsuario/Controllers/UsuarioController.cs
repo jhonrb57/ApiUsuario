@@ -1,8 +1,8 @@
-﻿using ApiUsuario.Models;
-using Dapper;
+﻿using Dapper;
+using System.Text;
+using ApiUsuario.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
-using System.Text;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,7 +12,17 @@ namespace ApiUsuario.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        private string connectionString = "Data Source=DESKTOP-EG9BK65;Initial Catalog=Usuarios;Integrated Security=True;TrustServerCertificate=True";
+        private static string? ConexionBd()
+        {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(AppContext.BaseDirectory)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
+            IConfiguration configuration = builder.Build();
+            string? connectionString = configuration.GetConnectionString("Conexion");
+
+            return connectionString;
+        }
 
         // GET: api/<UsuarioController>
         [HttpGet]
@@ -20,7 +30,7 @@ namespace ApiUsuario.Controllers
         {
             try
             {
-                using (var connection = new SqlConnection(connectionString))
+                using (var connection = new SqlConnection(ConexionBd()))
                 {
                     var sql = "Select * from Usuario";
                     List<Usuario> list = connection.Query<Usuario>(sql).ToList();
@@ -53,7 +63,7 @@ namespace ApiUsuario.Controllers
         {
             try
             {
-                using (var connection = new SqlConnection(connectionString))
+                using (var connection = new SqlConnection(ConexionBd()))
                 {
                     var sql = "Select * from Usuario where Cedula = " + id;
                     List<Usuario> list = connection.Query<Usuario>(sql).ToList();
@@ -81,7 +91,7 @@ namespace ApiUsuario.Controllers
         {
             try
             {
-                using (var connection = new SqlConnection(connectionString))
+                using (var connection = new SqlConnection(ConexionBd()))
                 {
                         var sql = "Insert Into Usuario (Id,Nombre,Cedula,Telefono,Direccion,Email) Values(@Id,@Nombre,@Cedula,@Telefono,@Direccion,@Email)";
                         connection.Execute(sql, model);
