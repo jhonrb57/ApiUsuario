@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using System.Text;
 using ApiUsuario.Models;
+using ApiUsuario.Context;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 
@@ -12,17 +13,7 @@ namespace ApiUsuario.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        private static string? ConexionBd()
-        {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(AppContext.BaseDirectory)
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-
-            IConfiguration configuration = builder.Build();
-            string? connectionString = configuration.GetConnectionString("Conexion");
-
-            return connectionString;
-        }
+        private readonly ConexionBd conexion = new ConexionBd();
 
         // GET: api/<UsuarioController>
         [HttpGet]
@@ -30,7 +21,7 @@ namespace ApiUsuario.Controllers
         {
             try
             {
-                using (var connection = new SqlConnection(ConexionBd()))
+                using (var connection = new SqlConnection(conexion.Conexion()))
                 {
                     var sql = "Select * from Usuario";
                     List<Usuario> list = connection.Query<Usuario>(sql).ToList();
@@ -63,7 +54,7 @@ namespace ApiUsuario.Controllers
         {
             try
             {
-                using (var connection = new SqlConnection(ConexionBd()))
+                using (var connection = new SqlConnection(conexion.Conexion()))
                 {
                     var sql = "Select * from Usuario where Cedula = " + id;
                     List<Usuario> list = connection.Query<Usuario>(sql).ToList();
@@ -91,7 +82,7 @@ namespace ApiUsuario.Controllers
         {
             try
             {
-                using (var connection = new SqlConnection(ConexionBd()))
+                using (var connection = new SqlConnection(conexion.Conexion()))
                 {
                         var sql = "Insert Into Usuario (Id,Nombre,Cedula,Telefono,Direccion,Email) Values(@Id,@Nombre,@Cedula,@Telefono,@Direccion,@Email)";
                         connection.Execute(sql, model);
