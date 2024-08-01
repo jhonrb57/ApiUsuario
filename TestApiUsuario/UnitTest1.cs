@@ -1,4 +1,3 @@
-using ApiUsuario;
 namespace TestApiUsuario
 {
     [TestClass]
@@ -17,7 +16,7 @@ namespace TestApiUsuario
         public void TestPost()
         {
             var api = new ApiUsuario.Controllers.UsuarioController();
-            var model = new ApiUsuario.Models.Usuario();
+            var model = new Models.Usuario();
             model.Id = "123";
             model.Nombre = "Lina";
             model.Cedula = 1025549402;

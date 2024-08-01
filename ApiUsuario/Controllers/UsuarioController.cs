@@ -1,7 +1,7 @@
 ﻿using Dapper;
+using Models;
+using BaseDatos;
 using System.Text;
-using ApiUsuario.Models;
-using ApiUsuario.Context;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 
@@ -60,7 +60,7 @@ namespace ApiUsuario.Controllers
                     List<Usuario> list = connection.Query<Usuario>(sql).ToList();
 
                     if (list.Count > 0)
-                        return "{\n\tid:" + list[0].Id.ToString() + ",\n" + 
+                        return "{\n\tid:" + list[0].Id.ToString() + ",\n" +
                             "\tnombre:" + list[0].Nombre.ToString() + ",\n" +
                             "\tcedula:" + list[0].Cedula.ToString() + ",\n" +
                             "\ttelefono:" + list[0].Telefono.ToString() + ",\n" +
@@ -84,10 +84,10 @@ namespace ApiUsuario.Controllers
             {
                 using (var connection = new SqlConnection(conexion.Conexion()))
                 {
-                        var sql = "Insert Into Usuario (Id,Nombre,Cedula,Telefono,Direccion,Email) Values(@Id,@Nombre,@Cedula,@Telefono,@Direccion,@Email)";
-                        connection.Execute(sql, model);
+                    var sql = "Insert Into Usuario (Id,Nombre,Cedula,Telefono,Direccion,Email) Values(@Id,@Nombre,@Cedula,@Telefono,@Direccion,@Email)";
+                    connection.Execute(sql, model);
 
-                        return "Inserción correcta";
+                    return "Inserción correcta";
                 }
             }
             catch (Exception ex)
