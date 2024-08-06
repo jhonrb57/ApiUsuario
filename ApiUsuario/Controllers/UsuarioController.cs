@@ -4,6 +4,7 @@ using BaseDatos;
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using System.Data;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -23,8 +24,7 @@ namespace ApiUsuario.Controllers
             {
                 using (var connection = new SqlConnection(conexion.Conexion()))
                 {
-                    var sql = "Select * from Usuario";
-                    List<Usuario> list = connection.Query<Usuario>(sql).ToList();
+                    List<Usuario> list = connection.Query<Usuario>("pp_listar", commandType: CommandType.StoredProcedure).ToList();
                     StringBuilder sb = new StringBuilder();
 
                     if (list.Count > 0)
@@ -50,42 +50,40 @@ namespace ApiUsuario.Controllers
 
         // GET api/<UsuarioController>/5
         [HttpGet("{id}")]
-        public string Get(string id)
+        public Usuario? Get(string id)
         {
             try
             {
                 using (var connection = new SqlConnection(conexion.Conexion()))
                 {
-                    var sql = "Select * from Usuario where Cedula = " + id;
-                    List<Usuario> list = connection.Query<Usuario>(sql).ToList();
-
-                    if (list.Count > 0)
-                        return "{\n\tid:" + list[0].Id.ToString() + ",\n" +
-                            "\tnombre:" + list[0].Nombre.ToString() + ",\n" +
-                            "\tcedula:" + list[0].Cedula.ToString() + ",\n" +
-                            "\ttelefono:" + list[0].Telefono.ToString() + ",\n" +
-                            "\tdireccion:" + list[0].Direccion.ToString() + ",\n" +
-                            "\temail:" + list[0].Email.ToString() + "\n}";
-                    else
-                        return "No hay registros con el número de cédula " + id;
+                    var parametros = new DynamicParameters();
+                    parametros.Add("@id", id);
+                    return connection.QueryFirstOrDefault<Usuario>("pp_obtener", parametros, commandType: CommandType.StoredProcedure);
                 }
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                ex.Message.ToString();
+                return null;
             }
         }
 
         // POST api/<UsuarioController>
         [HttpPost]
-        public string Post(Usuario model)
+        public string Post(Usuario usuario)
         {
             try
             {
                 using (var connection = new SqlConnection(conexion.Conexion()))
                 {
-                    var sql = "Insert Into Usuario (Id,Nombre,Cedula,Telefono,Direccion,Email) Values(@Id,@Nombre,@Cedula,@Telefono,@Direccion,@Email)";
-                    connection.Execute(sql, model);
+                    var parametros = new DynamicParameters();
+                    parametros.Add("@id", usuario.Id);
+                    parametros.Add("@nombre", usuario.Nombre);
+                    parametros.Add("@cedula", usuario.Cedula);
+                    parametros.Add("@telefono", usuario.Telefono);
+                    parametros.Add("@direccion", usuario.Direccion);
+                    parametros.Add("@email", usuario.Email);
+                    connection.Execute("pp_registrar", parametros, commandType: CommandType.StoredProcedure);
 
                     return "Inserción correcta";
                 }

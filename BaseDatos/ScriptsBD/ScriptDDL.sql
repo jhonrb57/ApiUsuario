@@ -147,3 +147,68 @@ CREATE TABLE [dbo].[Usuario](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[pp_listar]
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT * FROM Usuario;
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[pp_obtener](@id varchar(50))
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT * FROM Usuario
+	WHERE Id = @id;
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[pp_registrar]
+(
+	@id varchar(50),
+	@nombre varchar(50),
+	@cedula int,
+	@telefono varchar(50),
+	@direccion varchar(50),
+	@email varchar(50)
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	INSERT INTO Usuario
+	(
+		Id,
+		Nombre,
+		Cedula,
+		Telefono,
+		Direccion,
+		Email
+	)
+	VALUES
+	(
+		@id,
+		@nombre,
+		@cedula,
+		@telefono,
+		@direccion,
+		@email
+	)
+END
+GO
