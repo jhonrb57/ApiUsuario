@@ -28,7 +28,6 @@ C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\bin\Debug\net8.0\System.Identit
 C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\bin\Debug\net8.0\System.Memory.Data.dll
 C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\bin\Debug\net8.0\System.Runtime.Caching.dll
 C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\bin\Debug\net8.0\System.Text.Json.dll
 C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\bin\Debug\net8.0\de\Microsoft.Data.SqlClient.resources.dll
 C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\bin\Debug\net8.0\es\Microsoft.Data.SqlClient.resources.dll
 C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\bin\Debug\net8.0\fr\Microsoft.Data.SqlClient.resources.dll
@@ -61,11 +60,6 @@ C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\ApiUsuario.Mvc
 C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\ApiUsuario.sourcelink.json
 C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\staticwebassets\msbuild.ApiUsuario.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\staticwebassets\msbuild.build.ApiUsuario.props
-C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ApiUsuario.props
-C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ApiUsuario.props
-C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\scopedcss\bundle\ApiUsuario.styles.css
 C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\ApiUsuario.csproj.Up2Date
 C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\ApiUsuario.dll
@@ -73,3 +67,12 @@ C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\refint\ApiUsua
 C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\ApiUsuario.pdb
 C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\ApiUsuario.genruntimeconfig.cache
 C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\ref\ApiUsuario.dll
+C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\bin\Debug\net8.0\ApiUsuario.staticwebassets.endpoints.json
+C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\swae.build.ex.cache
+C:\Users\JHON\source\repos\ApiUsuario\ApiUsuario\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

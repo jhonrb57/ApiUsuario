@@ -23,3 +23,4 @@ C:\Users\JHON\source\repos\ApiUsuario\BaseDatos\obj\Debug\BaseDatos.csproj.CoreC
 C:\Users\JHON\source\repos\ApiUsuario\BaseDatos\obj\Debug\BaseDatos.csproj.Up2Date
 C:\Users\JHON\source\repos\ApiUsuario\BaseDatos\obj\Debug\BaseDatos.dll
 C:\Users\JHON\source\repos\ApiUsuario\BaseDatos\obj\Debug\BaseDatos.pdb
+C:\Users\JHON\source\repos\ApiUsuario\BaseDatos\bin\Debug\System.IO.Pipelines.dll

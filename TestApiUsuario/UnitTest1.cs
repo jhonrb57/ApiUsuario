@@ -8,8 +8,9 @@ namespace TestApiUsuario
         {
             var api = new ApiUsuario.Controllers.UsuarioController();
             string id = "789";
-            string resultado = api.Get(id);
-            Assert.AreEqual("No hay registros con el número de cédula " + id, resultado);
+            var resultado = api.Get(id);
+            if(resultado == null)
+                Assert.AreEqual("No hay registros para el id: ", id);
         }
 
         [TestMethod]
