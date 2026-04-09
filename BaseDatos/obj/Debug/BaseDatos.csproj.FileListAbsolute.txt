@@ -17,7 +17,6 @@ C:\Users\JHON\source\repos\ApiUsuario\BaseDatos\bin\Debug\System.Runtime.Compile
 C:\Users\JHON\source\repos\ApiUsuario\BaseDatos\bin\Debug\System.Text.Encodings.Web.dll
 C:\Users\JHON\source\repos\ApiUsuario\BaseDatos\bin\Debug\System.Text.Json.dll
 C:\Users\JHON\source\repos\ApiUsuario\BaseDatos\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\JHON\source\repos\ApiUsuario\BaseDatos\bin\Debug\System.ValueTuple.dll
 C:\Users\JHON\source\repos\ApiUsuario\BaseDatos\obj\Debug\BaseDatos.csproj.AssemblyReference.cache
 C:\Users\JHON\source\repos\ApiUsuario\BaseDatos\obj\Debug\BaseDatos.csproj.CoreCompileInputs.cache
 C:\Users\JHON\source\repos\ApiUsuario\BaseDatos\obj\Debug\BaseDatos.csproj.Up2Date

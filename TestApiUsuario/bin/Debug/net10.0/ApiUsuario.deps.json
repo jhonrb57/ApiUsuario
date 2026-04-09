@@ -21,7 +21,7 @@
       },
       "Azure.Core/1.52.0": {
         "dependencies": {
-          "Microsoft.Bcl.AsyncInterfaces": "10.0.3",
+          "Microsoft.Bcl.AsyncInterfaces": "10.0.5",
           "System.ClientModel": "1.10.0",
           "System.Memory.Data": "10.0.3"
         },
@@ -53,11 +53,11 @@
           }
         }
       },
-      "Microsoft.Bcl.AsyncInterfaces/10.0.3": {
+      "Microsoft.Bcl.AsyncInterfaces/10.0.5": {
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
-            "assemblyVersion": "10.0.0.3",
-            "fileVersion": "10.0.326.7603"
+            "assemblyVersion": "10.0.0.5",
+            "fileVersion": "10.0.526.15411"
           }
         }
       },
@@ -361,7 +361,7 @@
       },
       "BaseDatos/1.0.0": {
         "dependencies": {
-          "Microsoft.Bcl.AsyncInterfaces": "10.0.3"
+          "Microsoft.Bcl.AsyncInterfaces": "10.0.5"
         },
         "runtime": {
           "BaseDatos.dll": {
@@ -407,12 +407,12 @@
       "path": "dapper/2.1.35",
       "hashPath": "dapper.2.1.35.nupkg.sha512"
     },
-    "Microsoft.Bcl.AsyncInterfaces/10.0.3": {
+    "Microsoft.Bcl.AsyncInterfaces/10.0.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-TV62UsrJZPX6gbt3c4WrtXh7bmaDIcMqf9uft1cc4L6gJXOU07hDGEh+bFQh/L2Az0R1WVOkiT66lFqS6G2NmA==",
-      "path": "microsoft.bcl.asyncinterfaces/10.0.3",
-      "hashPath": "microsoft.bcl.asyncinterfaces.10.0.3.nupkg.sha512"
+      "sha512": "sha512-hQB3Hq1LlF0NkGVNyZIvwIQIY3LM7Cw1oYjNiTvdNqmzzipVAWEK1c5sj2H5aFX0udnjgPLxSYKq2fupueS8ow==",
+      "path": "microsoft.bcl.asyncinterfaces/10.0.5",
+      "hashPath": "microsoft.bcl.asyncinterfaces.10.0.5.nupkg.sha512"
     },
     "Microsoft.Data.SqlClient/5.2.0": {
       "type": "package",
